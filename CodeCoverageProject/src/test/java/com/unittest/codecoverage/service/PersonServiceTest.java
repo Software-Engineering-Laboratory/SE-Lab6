@@ -146,4 +146,12 @@ public class PersonServiceTest {
                 .hasMessage(expectedMessage);
     }
 
+
+    @Test
+    public void testGetAge_shouldReturnPersonAgeWhenCalled() {
+        Person person = new Person();
+        person.setAge(34);
+        assertEquals(34, person.getAge());
+    }
+
 }

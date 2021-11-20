@@ -1,8 +1,10 @@
 package com.unittest.codecoverage.service;
 
+import com.unittest.codecoverage.models.StreetDirectionFlow;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.unittest.codecoverage.exceptions.BehaviorException;
 import com.unittest.codecoverage.models.Footpassenger;
@@ -48,6 +50,43 @@ public class TrafficBehaviorServiceTest {
 			.isInstanceOf(BehaviorException.class)
 			.hasMessage("You should be more careful");
 		
+	}
+
+
+	@Test
+	@DisplayName("CheckLookOnBothSides")
+	public void testCarsFlowInOneFlowTraffic() {
+
+		Traffic currentTrafic = new Traffic();
+		currentTrafic.setIntenseCarTraffic(true);
+
+		Footpassenger currentFootpassengerBehavior = new Footpassenger();
+		currentFootpassengerBehavior.setCrossedTheRoad(true);
+		currentFootpassengerBehavior.setCrossedTrafficLigth(TrafficLigth.GREEN);
+		currentFootpassengerBehavior.setLookedToTheLeft(false);
+		currentFootpassengerBehavior.setLookedToTheRight(false);
+
+		currentTrafic.setStreetDirectionFlow(StreetDirectionFlow.TWO_WAY);
+		Assertions.assertThatThrownBy(() -> trafficBehaviorService.footpassengerCrossTheStreet(currentTrafic, currentFootpassengerBehavior))
+				.isInstanceOf(BehaviorException.class)
+				.hasMessage("You should be more careful");
+
+	}
+
+	@Test
+	public void setMinimumSpeedAndGet(){
+		Traffic traffic = new Traffic();
+		traffic.setMinSpeedAllowed((byte)3);
+		assertEquals(traffic.getMinSpeedAllowed(), (byte)3);
+
+	}
+
+	@Test
+	public void getCurrentLightWithSetter(){
+		Traffic traffic = new Traffic();
+		traffic.setCurrentTrafficLight(TrafficLigth.RED);
+		assertEquals(traffic.getCurrentTrafficLight(), TrafficLigth.RED);
+
 	}
 
 }

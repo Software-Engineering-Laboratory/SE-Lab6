@@ -5,6 +5,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.unittest.codecoverage.exceptions.BehaviorException;
 import com.unittest.codecoverage.models.Footpassenger;
@@ -87,6 +88,13 @@ public class TrafficBehaviorServiceTest {
 		traffic.setCurrentTrafficLight(TrafficLigth.RED);
 		assertEquals(traffic.getCurrentTrafficLight(), TrafficLigth.RED);
 
+	}
+
+	@Test
+	public void setCrossTheStreetForPassengerAndGet(){
+		Footpassenger footpassenger = new Footpassenger();
+		footpassenger.setCrossedTheCrosswalk(true);
+		assertTrue(footpassenger.crossedTheCrosswalk());
 	}
 
 }

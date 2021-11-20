@@ -1,0 +1,12 @@
+
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÚËÚ…
+Lsquid:S1133,"5Do not forget to remove this deprecated code someday.(ïŠêÝ
+Lsquid:S1133J"5Do not forget to remove this deprecated code someday.(Àç«È
+Osquid:MissingDeprecatedCheck,"'Add the missing @Deprecated annotation.(ïŠêÝ
+Osquid:MissingDeprecatedCheckJ"'Add the missing @Deprecated annotation.(Àç«È
+isquid:S3776x"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ð×¡ˆ
+osquid:S3776Ž"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(‰×Ü®øÿÿÿÿ
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(¨šöŸþÿÿÿÿ
+dsquid:S00112ù"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+wsquid:S1149…"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(í…Ò‰
+|squid:S1149Ž"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(‰×Ü®øÿÿÿÿ
